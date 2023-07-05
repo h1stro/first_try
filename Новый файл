@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите слово: ");
+        string word = Console.ReadLine();
+
+        string vowels = ""; // Гласные
+        string consonants = ""; // Согласные
+
+        foreach (char letter in word)
+        {
+            if (IsVowel(letter))
+            {
+                vowels += letter;
+            }
+            else if (Char.IsLetter(letter))
+            {
+                consonants += letter;
+            }
+        }
+
+        Console.WriteLine("Гласные: " + vowels);
+        Console.WriteLine("Согласные: " + consonants);
+    }
+
+    static bool IsVowel(char letter)
+    {
+        letter = Char.ToLower(letter);
+
+        return letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u';
+    }
+}
